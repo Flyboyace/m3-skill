@@ -4,14 +4,11 @@ using UnityEngine;
 
 public class Bit : MonoBehaviour
 {
-
     SpriteRenderer spriteRenderer;
-    bool state = false;
-
+    public bool state;
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = Color.red;
     }
 
     // Update is called once per frame
@@ -19,15 +16,17 @@ public class Bit : MonoBehaviour
     {
         if (state)
         {
+            // Zet de sprite kleur op groen als state true is
             spriteRenderer.color = Color.green;
         }
         else
         {
+            // Zet de sprite kleur op rood als state false is
             spriteRenderer.color = Color.red;
         }
     }
-    void OnMouseUp()
+    private void OnMouseUp()
     {
-        state = !state;
+        state = !state; // Wissel tussen true en false
     }
 }
